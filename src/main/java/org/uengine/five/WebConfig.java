@@ -26,11 +26,12 @@ public class WebConfig extends org.uengine.social.uEngine5WebConfig {
      * Uncomment and implement if you want to change default storage
      */
 
+
 //    @Bean
 //    @Override
 //    public Storage storage() {
 //        CLOBStorage storage = new CLOBStorage();
-//        storage.setDatasource(super.dataSource());
+//        storage.setDataSource(dataSource());
 //        storage.setTableName("bpm_def");
 //
 //        return storage;
@@ -65,21 +66,21 @@ public class WebConfig extends org.uengine.social.uEngine5WebConfig {
      * Uncomment and return an real datasource not the H2
      */
 
-//    @Bean
-//    public DataSource dataSource() {
-//        //In classpath from spring-boot-starter-web
-//        final Properties pool = new Properties();
-//        pool.put("driverClassName", "com.mysql.jdbc.Driver");
-//        pool.put("url", "jdbc:mysql://localhost:3306/uengine?useUnicode=true&characterEncoding=UTF8&useOldAliasMetadataBehavior=true");
-//        pool.put("username", "root");
-//        pool.put("password", "");
-//        pool.put("minIdle", 1);
-//        try {
-//            return new org.apache.tomcat.jdbc.pool.DataSourceFactory().createDataSource(pool);
-//        } catch (Exception e) {
-//            throw new RuntimeException(e);
-//        }
-//    }
+    @Bean
+    public DataSource dataSource() {
+        //In classpath from spring-boot-starter-web
+        final Properties pool = new Properties();
+        pool.put("driverClassName", "com.mysql.jdbc.Driver");
+        pool.put("url", "jdbc:mysql://localhost:3306/uengine?useUnicode=true&characterEncoding=UTF8&useOldAliasMetadataBehavior=true");
+        pool.put("username", "root");
+        pool.put("password", "");
+        pool.put("minIdle", 1);
+        try {
+            return new org.apache.tomcat.jdbc.pool.DataSourceFactory().createDataSource(pool);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 }
 

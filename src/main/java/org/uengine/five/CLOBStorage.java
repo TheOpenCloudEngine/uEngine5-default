@@ -56,6 +56,8 @@ public class CLOBStorage implements Storage{
 
     @Override
     public List<IResource> listFiles(IContainer iContainer) throws Exception {
+
+            //DB table 의 CLOB 에 있는 파일 ㄹ리스트를 리턴
         return null;
     }
 
