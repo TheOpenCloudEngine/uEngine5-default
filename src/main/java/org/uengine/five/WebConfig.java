@@ -1,5 +1,6 @@
 package org.uengine.five;
 
+import org.metaworks.springboot.configuration.CorsFilter;
 import org.springframework.context.annotation.*;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.uengine.kernel.ActivityFilter;
@@ -21,11 +22,19 @@ import java.util.Properties;
 @Configuration
 public class WebConfig extends org.uengine.social.uEngine5WebConfig {
 
+    /**
+     * Uncomment if this needs a CORS setting by itself
+     * @return
+     */
+    @Bean
+    public CorsFilter corsFilter() {
+        return new CorsFilter();
+    }
+
 
     /**
      * Uncomment and implement if you want to change default storage
      */
-
 
 //    @Bean
 //    @Override
