@@ -90,4 +90,9 @@ public class CLOBStorage implements Storage{
     public OutputStream getOutputStream(IResource iResource) throws Exception {
         return null;
     }
+
+    @Override
+    public boolean isContainer(IResource iResource) throws Exception {
+        return false;
+    }
 }
